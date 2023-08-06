@@ -16,10 +16,10 @@ class Filters extends BaseConfig
      * make reading things nicer and simpler.
      */
     public array $aliases = [
-        'csrf'          => CSRF::class,
-        'toolbar'       => DebugToolbar::class,
-        'honeypot'      => Honeypot::class,
-        'invalidchars'  => InvalidChars::class,
+        'csrf' => CSRF::class,
+        'toolbar' => DebugToolbar::class,
+        'honeypot' => Honeypot::class,
+        'invalidchars' => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
     ];
 
@@ -51,7 +51,9 @@ class Filters extends BaseConfig
      * permits any HTTP method to access a controller. Accessing the controller
      * with a method you don't expect could bypass the filter.
      */
-    public array $methods = [];
+    public array $methods = [
+        'post' => ['csrf'],
+    ];
 
     /**
      * List of filter aliases that should run on any
