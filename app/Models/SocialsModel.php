@@ -10,6 +10,6 @@ class SocialsModel extends Model
 
     public function getSocials($userId)
     {
-        return $this->where(['userId' => $userId])->findAll();
+        return $this->where(['userId' => $userId])->first();
     }
 }

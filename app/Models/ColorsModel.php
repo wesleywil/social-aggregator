@@ -10,6 +10,6 @@ class ColorsModel extends Model
 
     public function getColors($userId)
     {
-        return $this->where(['userId' => $userId])->findAll();
+        return $this->where(['userId' => $userId])->first();
     }
 }
