@@ -4,6 +4,8 @@ namespace Config;
 
 use App\Controllers\Pages;
 use App\Controllers\User;
+use App\Controllers\Profile;
+use App\Controllers\Dashboard;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -35,8 +37,10 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->match(['get', 'post'], 'user/create', [User::class, 'create']);
 $routes->get('user', [User::class, 'index']);
-$routes->get('pages', [Pages::class, 'index']);
-$routes->get('(:segment)', [Pages::class, 'view']);
+$routes->get('profile_card', [Profile::class, 'index']);
+$routes->get('dashboard', [Dashboard::class, 'index']);
+// $routes->get('pages', [Pages::class, 'index']);
+// $routes->get('(:segment)', [Pages::class, 'view']);
 
 
 /*
