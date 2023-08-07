@@ -6,6 +6,8 @@ use App\Controllers\Pages;
 use App\Controllers\User;
 use App\Controllers\Profile;
 use App\Controllers\Dashboard;
+use App\Controllers\SignIn;
+use App\Controllers\SignUp;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -36,11 +38,14 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->match(['get', 'post'], 'user/create', [User::class, 'create']);
+$routes->get('login', [SignIn::class, 'index']);
+$routes->get('register', [SignUp::class, 'index']);
 $routes->get('user', [User::class, 'index']);
 $routes->get('profile_card', [Profile::class, 'index']);
 $routes->get('dashboard', [Dashboard::class, 'index']);
-// $routes->get('pages', [Pages::class, 'index']);
-// $routes->get('(:segment)', [Pages::class, 'view']);
+$routes->post('login', [SignIn::class, 'auth']);
+$routes->post('register', [SignUp::class, 'store']);
+
 
 
 /*
