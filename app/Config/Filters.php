@@ -8,7 +8,7 @@ use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
-use CodeIgniter\Filters\AuthGuard;
+use \App\Filters\AuthGuard;
 
 class Filters extends BaseConfig
 {

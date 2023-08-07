@@ -15,10 +15,13 @@ class Dashboard extends BaseController
         $socialModel = model(SocialsModel::class);
         $colorModel = model(ColorsModel::class);
 
+        $session = session();
+
         $data = [
             'user' => $userModel->getUser(1),
             'socials' => $socialModel->getSocials(1),
-            'colors' => $colorModel->getColors(1)
+            'colors' => $colorModel->getColors(1),
+            'session' => $session
         ];
 
         return view('templates/header', $data)
