@@ -12,7 +12,7 @@
     <div class="flex flex-col gap-2">
         <?php if (esc($socials['twitter'])): ?>
             <div class="w-full mx-auto p-1 flex border border-[<?= esc($colors['acc_color']) ?>] rounded">
-                <img src="https://dummyimage.com/50x50" alt="social media name" class="rounded-full">
+                <img src="<?= base_url() ?>assets/images/twitter.svg" alt="twitter icon" class="rounded-full">
                 <div class="self-center flex gap-1">
                     <span class="self-center ml-2 font-semibold">@
                         <?= esc($socials['twitter']) ?>
@@ -33,7 +33,7 @@
 
         <?php if (esc($socials['facebook'])): ?>
             <div class="w-full mx-auto p-1 flex border border-[<?= esc($colors['acc_color']) ?>] rounded">
-                <img src="https://dummyimage.com/50x50" alt="social media name" class="rounded-full">
+                <img src="<?= base_url() ?>assets/images/facebook.svg" alt="facebook icon" class="rounded-full">
                 <div class="self-center flex gap-1">
                     <span class="self-center ml-2 font-semibold">@
                         <?= esc($socials['facebook']) ?>
@@ -54,7 +54,7 @@
 
         <?php if (esc($socials['instagram'])): ?>
             <div class="w-full mx-auto p-1 flex border border-[<?= esc($colors['acc_color']) ?>] rounded">
-                <img src="https://dummyimage.com/50x50" alt="social media name" class="rounded-full">
+                <img src="<?= base_url() ?>assets/images/instagram.svg" alt="instagram icon" class="rounded-full">
                 <div class="self-center flex gap-1">
                     <span class="self-center ml-2 font-semibold">@
                         <?= esc($socials['instagram']) ?>
@@ -75,7 +75,7 @@
 
         <?php if (esc($socials['linkedin'])): ?>
             <div class="w-full mx-auto p-1 flex border border-[<?= esc($colors['acc_color']) ?>] rounded">
-                <img src="https://dummyimage.com/50x50" alt="social media name" class="rounded-full">
+                <img src="<?= base_url() ?>assets/images/linkedin.svg" alt="linkedin icon" class="rounded-full">
                 <div class="self-center flex gap-1">
                     <span class="self-center ml-2 font-semibold">@
                         <?= esc($socials['linkedin']) ?>
@@ -96,7 +96,7 @@
 
         <?php if (esc($socials['youtube'])): ?>
             <div class="w-full mx-auto p-1 flex border border-[<?= esc($colors['acc_color']) ?>] rounded">
-                <img src="https://dummyimage.com/50x50" alt="social media name" class="rounded-full">
+                <img src="<?= base_url() ?>assets/images/youtube.svg" alt="youtube icon" class="rounded-full">
                 <div class="self-center flex gap-1">
                     <span class="self-center ml-2 font-semibold">@
                         <?= esc($socials['youtube']) ?>
@@ -117,7 +117,7 @@
 
         <?php if (esc($socials['tiktok'])): ?>
             <div class="w-full mx-auto p-1 flex border border-[<?= esc($colors['acc_color']) ?>] rounded">
-                <img src="https://dummyimage.com/50x50" alt="social media name" class="rounded-full">
+                <img src="<?= base_url() ?>assets/images/tiktok.svg" alt="tiktok icon" class="rounded-full">
                 <div class="self-center flex gap-1">
                     <span class="self-center ml-2 font-semibold">@
                         <?= esc($socials['tiktok']) ?>

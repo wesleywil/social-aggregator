@@ -17,7 +17,7 @@
         <div class="flex flex-wrap justify-center">
             <?php if (esc($socials['twitter'])): ?>
                 <div class="w-40 p-1 flex items-center text-xs">
-                    <img src="https://dummyimage.com/40x40" alt="social media" class="rounded-full">
+                    <img src="<?= base_url() ?>assets/images/twitter.svg" alt="social media" class="rounded-full">
                     <span class="ml-1">@
                         <?= esc($socials['twitter']) ?>
                     </span>
@@ -25,7 +25,7 @@
             <?php endif ?>
             <?php if (esc($socials['facebook'])): ?>
                 <div class="w-40 p-1 flex items-center text-xs">
-                    <img src="https://dummyimage.com/40x40" alt="social media" class="rounded-full">
+                    <img src="<?= base_url() ?>assets/images/facebook.svg" alt="social media" class="rounded-full">
                     <span class="ml-1">@
                         <?= esc($socials['fabook']) ?>
                     </span>
@@ -33,7 +33,7 @@
             <?php endif ?>
             <?php if (esc($socials['instagram'])): ?>
                 <div class="w-40 p-1 flex items-center text-xs">
-                    <img src="https://dummyimage.com/40x40" alt="social media" class="rounded-full">
+                    <img src="<?= base_url() ?>assets/images/instagram.svg" alt="social media" class="rounded-full">
                     <span class="ml-1">@
                         <?= esc($socials['instagram']) ?>
                     </span>
@@ -41,7 +41,7 @@
             <?php endif ?>
             <?php if (esc($socials['linkedin'])): ?>
                 <div class="w-40 p-1 flex items-center text-xs">
-                    <img src="https://dummyimage.com/40x40" alt="social media" class="rounded-full">
+                    <img src="<?= base_url() ?>assets/images/linkedin.svg" alt="social media" class="rounded-full">
                     <span class="ml-1">@
                         <?= esc($socials['linkedin']) ?>
                     </span>
@@ -49,7 +49,7 @@
             <?php endif ?>
             <?php if (esc($socials['youtube'])): ?>
                 <div class="w-40 p-1 flex items-center text-xs">
-                    <img src="https://dummyimage.com/40x40" alt="social media" class="rounded-full">
+                    <img src="<?= base_url() ?>assets/images/youtube.svg" alt="social media" class="rounded-full">
                     <span class="ml-1">@
                         <?= esc($socials['youtube']) ?>
                     </span>
@@ -57,7 +57,7 @@
             <?php endif ?>
             <?php if (esc($socials['tiktok'])): ?>
                 <div class="w-40 p-1 flex items-center text-xs">
-                    <img src="https://dummyimage.com/40x40" alt="social media" class="rounded-full">
+                    <img src="<?= base_url() ?>assets/images/tiktok.svg" alt="social media" class="rounded-full">
                     <span class="ml-1">@
                         <?= esc($socials['tikok']) ?>
                     </span>
