@@ -42,9 +42,11 @@ $routes->get('login', [SignIn::class, 'index']);
 $routes->get('register', [SignUp::class, 'index']);
 $routes->get('user', [User::class, 'index']);
 $routes->get('profile_card', [Profile::class, 'index']);
+$routes->get('profile_edit', [Profile::class, 'update_index']);
 $routes->get('dashboard', [Dashboard::class, 'index'], ['filter' => 'authGuard']);
 $routes->post('login', [SignIn::class, 'auth']);
 $routes->post('register', [SignUp::class, 'store']);
+$routes->post('profile_edit', [Profile::class, 'update'], ['filter' => 'authGuard']);
 
 
 
