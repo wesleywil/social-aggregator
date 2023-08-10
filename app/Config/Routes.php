@@ -38,15 +38,17 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->match(['get', 'post'], 'user/create', [User::class, 'create']);
+$routes->match(['get', 'post'], 'profile_edit', [Profile::class, 'update'], ['filter' => 'authGuard']);
 $routes->get('login', [SignIn::class, 'index']);
 $routes->get('register', [SignUp::class, 'index']);
 $routes->get('user', [User::class, 'index']);
 $routes->get('profile_card', [Profile::class, 'index']);
-$routes->get('profile_edit', [Profile::class, 'update_index']);
 $routes->get('dashboard', [Dashboard::class, 'index'], ['filter' => 'authGuard']);
 $routes->post('login', [SignIn::class, 'auth']);
 $routes->post('register', [SignUp::class, 'store']);
-$routes->post('profile_edit', [Profile::class, 'update'], ['filter' => 'authGuard']);
+$routes->post('color_edit', [Profile::class, 'updateColors'], ['filter' => 'authGuard']);
+$routes->post('socials_edit', [Profile::class, 'updateSocials'], ['filter' => 'authGuard']);
+
 
 
 
