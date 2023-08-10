@@ -8,6 +8,8 @@ class ColorsModel extends Model
 {
     protected $table = 'social_aggregator.colors';
 
+    protected $allowedFields = ['txt_color', 'acc_color', 'bg_color', 'userId'];
+
     public function getColors($userId)
     {
         return $this->where(['userId' => $userId])->first();
