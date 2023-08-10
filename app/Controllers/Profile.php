@@ -9,23 +9,32 @@ use App\Models\ColorsModel;
 
 class Profile extends BaseController
 {
-    public function index()
+    public function index($username)
     {
         $userModel = model(UserModel::class);
         $socialModel = model(SocialsModel::class);
         $colorModel = model(ColorsModel::class);
 
-        $session = session();
-        $data = [
-            'user' => $userModel->getUser(1),
-            'socials' => $socialModel->getSocials(1),
-            'colors' => $colorModel->getColors(1),
-            'session' => $session,
-        ];
+        $user = $userModel->where('username', $username)->first();
 
-        return view('templates/header', $data)
-            . view('pages/profile_card')
-            . view('templates/footer');
+        if ($user) {
+            $data = [
+                'user' => $userModel->getUser($user['id']),
+                'socials' => $socialModel->getSocials($user['id']),
+                'colors' => $colorModel->getColors($user['id']),
+
+            ];
+
+            return view('templates/header', $data)
+                . view('pages/profile_card')
+                . view('templates/footer');
+        } else {
+            return view('templates/header')
+                . view('pages/user_not_found')
+                . view('templates/footer');
+        }
+
+
     }
 
 

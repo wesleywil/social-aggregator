@@ -18,9 +18,9 @@ class Dashboard extends BaseController
         $session = session();
 
         $data = [
-            'user' => $userModel->getUser(1),
-            'socials' => $socialModel->getSocials(1),
-            'colors' => $colorModel->getColors(1),
+            'user' => $userModel->getUser($session->get('id')),
+            'socials' => $socialModel->getSocials($session->get('id')),
+            'colors' => $colorModel->getColors($session->get('id')),
             'session' => $session
         ];
 
