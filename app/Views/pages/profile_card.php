@@ -1,7 +1,7 @@
 <div
     class="w-full h-full flex flex-col items-center  text-center bg-[<?= esc($colors['bg_color']) ?>] text-[<?= esc($colors['txt_color']) ?>]">
     <!-- Profile picture -->
-    <img src="https://dummyimage.com/150x150" alt="profile" class="mt-8 rounded-full">
+    <img src="<?= esc($user['user_img']); ?>" alt="profile" class="h-40 w-40 mt-8 rounded-full">
     <div class="flex flex-col text-sm">
         <h2>Professional Contact</h2>
         <h2>

@@ -5,6 +5,12 @@
     <form action="/profile_edit" method="post"
         class="w-11/12 md:w-10/11 xl:w-1/3 p-2 flex flex-col gap-1 bg-slate-200 rounded">
         <?= csrf_field() ?>
+        <div class=" flex flex-col gap-2">
+            <h2 class="text-center">Actual Profile Image</h2>
+            <img src="<?= esc($user['user_img']); ?>" alt="profile" class="h-24 w-24 mx-auto rounded-full">
+            <input type="text" name="user_img" value="<?php echo $user['user_img'] ?>"
+                placeholder="Insert the Imag url for a profile picture" class="px-2 py-1 rounded">
+        </div>
         <input type="text" name="name" value="<?php echo $user['name'] ?>" placeholder="Name"
             class="w-full px-2 py-1 rounded">
         <input type="text" name="username" value="<?php echo $user['username'] ?>" placeholder="Username"

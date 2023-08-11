@@ -8,7 +8,7 @@ class UserModel extends Model
 {
     protected $table = 'social_aggregator.user';
 
-    protected $allowedFields = ['name', 'username', 'email', 'password'];
+    protected $allowedFields = ['name', 'username', 'email', 'password', 'user_img'];
 
     public function getUser($userId)
     {

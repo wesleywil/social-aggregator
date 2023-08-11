@@ -59,6 +59,7 @@ class Profile extends BaseController
                     . view('templates/footer');
             } else {
                 $rules = [
+                    'user_img' => 'required|min_length[3]|max_length[155]',
                     'name' => 'required|min_length[3]|max_length[50]',
                     'username' => 'required|min_length[3]|max_length[50]',
                     'email' => 'required|min_length[10]|max_length[155]|valid_email',
@@ -66,6 +67,7 @@ class Profile extends BaseController
 
                 if ($this->validate($rules)) {
                     $updateData = [
+                        'user_img' => $this->request->getPost('user_img'),
                         'name' => $this->request->getPost('name'),
                         'username' => $this->request->getPost('username'),
                         'email' => $this->request->getPost('email'),

@@ -2,7 +2,7 @@
     class="w-full h-full flex flex-col items-center text-center text-[<?= esc($colors['txt_color']); ?>] bg-[<?= esc($colors['bg_color']); ?>]">
     <h1 class="mt-8 text-4xl font-bold">Dashboard</h1>
     <div class="w-full mt-8">
-        <img src="https://dummyimage.com/100x100" alt="profile" class="mx-auto rounded-full">
+        <img src="<?= esc($user['user_img']) ?>" alt="profile" class="h-40 w-40 mx-auto rounded-full">
         <h1>
             <?= esc($user['name']) ?>
         </h1>
