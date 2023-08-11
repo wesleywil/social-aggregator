@@ -1,21 +1,22 @@
 <div
     class="w-full h-full flex flex-col items-center text-center text-[<?= esc($colors['txt_color']); ?>] bg-[<?= esc($colors['bg_color']); ?>]">
     <h1 class="mt-8 text-4xl font-bold">Dashboard</h1>
-    <div class="w-full mt-8">
-        <img src="<?= esc($user['user_img']) ?>" alt="profile" class="h-40 w-40 mx-auto rounded-full">
-        <h1>
+    <div class="w-full mt-6">
+        <img src="<?= esc($user['user_img']) ?>" alt="profile" class="h-36 w-36 md:w-40 md:h-40 mx-auto rounded-full">
+        <h1 class="text-2xl md:text-3xl">
             <?= esc($user['name']) ?>
         </h1>
-        <h2>
+        <h2 class="text-xl md:text-2xl">
             <?= esc($user['email']) ?>
         </h2>
         <h1 class="mt-4">Palette of colors</h1>
-        <div class="w-1/2 mx-auto mt-2 h-8 flex rounded overflow-hidden">
+        <div class="w-1/2 xl:w-1/5 mx-auto mt-2 h-8 flex rounded overflow-hidden">
             <span class="grow h-8 bg-[<?= esc($colors['txt_color']) ?>]"></span>
             <span class="grow h-8 bg-[<?= esc($colors['bg_color']) ?>]"></span>
             <span class="grow h-8 bg-[<?= esc($colors['acc_color']) ?>]"></span>
         </div>
-        <div class="flex flex-wrap justify-center">
+        <div
+            class="w-11/12 xl:w-1/5 md:w-1/2 mx-auto mt-2 flex flex-wrap justify-center border border-[<?= esc($colors['acc_color']) ?>] rounded-xl">
             <?php if (esc($socials['twitter'])): ?>
                 <div class="w-40 p-1 flex items-center text-xs">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="<?= esc($colors['txt_color']); ?>" viewBox="0 0 24 24"

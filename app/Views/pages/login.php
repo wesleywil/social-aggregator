@@ -1,6 +1,6 @@
 <div class="w-full h-full flex flex-col items-center justify-center text-center">
 
-    <div class="w-full ">
+    <div class="w-full md:w-1/2 xl:w-1/3">
         <h1 class="text-center text-3xl font-bold">Sign In</h1>
         <?php if (session()->getFlashdata('msg')): ?>
             <h1 class="text-xl text-red-500 font-bold">
@@ -19,7 +19,7 @@
                 <button type="button"
                     class="px-2 py-1 text-white font-semibold bg-slate-500 hover:bg-slate-700 rounded">Cancel</button>
             </div>
-            <a href="/signUp" class="text-orange-700 ">Don't have an account? Sign Up here!</a>
+            <a href="/register" class="text-orange-700 ">Don't have an account? Sign Up here!</a>
         </form>
     </div>
 </div>

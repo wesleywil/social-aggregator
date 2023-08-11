@@ -1,6 +1,6 @@
 <div class="w-full h-full flex flex-col items-center justify-center text-center">
 
-    <div class="w-full ">
+    <div class="w-full md:w-1/2 xl:w-1/3">
         <h1 class="text-center text-3xl font-bold">Sign Up</h1>
         <?php if (isset($validation)): ?>
             <h1 class="text-xl text-red-500 font-bold">
