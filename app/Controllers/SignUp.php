@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\UserModel;
+use App\Models\ColorsModel;
+use App\Models\SocialsModel;
 
 class SignUp extends Controller
 {
@@ -28,6 +30,8 @@ class SignUp extends Controller
 
         if ($this->validate($rules)) {
             $userModel = new UserModel();
+            $colorModel = new ColorsModel();
+            $socialsModel = new SocialsModel();
             $data = [
                 'username' => $this->request->getVar('username'),
                 'email' => $this->request->getVar('email'),
@@ -35,6 +39,19 @@ class SignUp extends Controller
             ];
 
             $userModel->save($data);
+
+            $userId = $userModel->getInsertID();
+
+            // Registring the colors for the new user
+            $colorData = ['userId' => $userId,];
+            $colorModel->insert($colorData);
+
+            // Registring the socials for the new user
+            $socialsData = ['userId' => $userId,];
+            $socialsModel->insert($socialsData);
+
+
+
             return redirect()->to('/login');
         } else {
             $data['validation'] = $this->validator;
