@@ -9,7 +9,7 @@
         </h2>
     </div>
     <!-- Social media links - facebook - insta - linkedin - twitter(x) - youtube - tiktok -->
-    <div class="w-11/12 xl:w-1/4 md:w-1/2 mx-auto mt-2 flex flex-col md:flex-row md:flex-wrap gap-2">
+    <div class="w-11/12 xl:w-1/4 md:w-1/2 mx-auto mt-2 flex flex-col md:flex-row md:flex-wrap justify-center gap-2">
         <?php if (esc($socials['twitter'])): ?>
             <div class="w-full md:w-52 mx-auto p-1 flex border border-[<?= esc($colors['acc_color']) ?>] rounded">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="<?= esc($colors['txt_color']); ?>" viewBox="0 0 24 24"
@@ -161,7 +161,8 @@
         <?php endif ?>
 
         <?php if (!esc($socials['twitter']) && !esc($socials['facebook']) && !esc($socials['instagram']) && !esc($socials['linkedin']) && !esc($socials['youtube']) && !esc($socials['tiktok'])): ?>
-            <h1>No socials</h1>
+            <h1 class="mt-2 text-center text-2xl font-semibold text-[<?= esc($colors['acc_color']); ?>]">No socials
+                registred yet!</h1>
         <?php endif ?>
     </div>
 </div>

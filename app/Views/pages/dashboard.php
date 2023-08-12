@@ -90,7 +90,8 @@
                 </div>
             <?php endif ?>
             <?php if (!esc($socials['twitter']) && !esc($socials['facebook']) && !esc($socials['instagram']) && !esc($socials['linkedin']) && !esc($socials['youtube']) && !esc($socials['tiktok'])): ?>
-                <h1>No socials</h1>
+                <h1 class="text-xl font-semibold">You did not registred a social media, click in the button bellow to add
+                    new socials</h1>
             <?php endif ?>
 
         </div>
