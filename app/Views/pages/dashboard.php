@@ -1,6 +1,6 @@
 <div
     class="w-full h-full flex flex-col items-center text-center text-[<?= esc($colors['txt_color']); ?>] bg-[<?= esc($colors['bg_color']); ?>]">
-    <h1 class="mt-8 text-4xl font-bold">Dashboard</h1>
+    <h1 class="mt-4 text-4xl font-bold">Dashboard</h1>
     <div class="w-full mt-6">
         <img src="<?= esc($user['user_img']) ?>" alt="profile" class="h-36 w-36 md:w-40 md:h-40 mx-auto rounded-full">
         <h1 class="text-2xl md:text-3xl">

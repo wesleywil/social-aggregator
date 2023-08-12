@@ -1,7 +1,7 @@
 <div
     class="w-full h-full flex flex-col items-center  text-center bg-[<?= esc($colors['bg_color']) ?>] text-[<?= esc($colors['txt_color']) ?>]">
     <!-- Profile picture -->
-    <img src="<?= esc($user['user_img']); ?>" alt="profile" class="w-36 h-36 md:h-40 md:w-40 mt-8 rounded-full">
+    <img src="<?= esc($user['user_img']); ?>" alt="profile" class="w-36 h-36 md:h-40 md:w-40 mt-4 rounded-full">
     <div class="flex flex-col text-sm">
         <h2 class="text-xl md:text-3xl font-semibold">Professional Contact</h2>
         <h2 class="md:text-xl">

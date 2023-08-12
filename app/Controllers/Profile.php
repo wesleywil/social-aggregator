@@ -17,22 +17,48 @@ class Profile extends BaseController
 
         $user = $userModel->where('username', $username)->first();
 
-        if ($user) {
-            $data = [
-                'user' => $userModel->getUser($user['id']),
-                'socials' => $socialModel->getSocials($user['id']),
-                'colors' => $colorModel->getColors($user['id']),
+        $session = session();
 
-            ];
+        if ($session->get('isLoggedIn')) {
+            if ($user) {
+                $data = [
+                    'user' => $userModel->getUser($user['id']),
+                    'socials' => $socialModel->getSocials($user['id']),
+                    'colors' => $colorModel->getColors($user['id']),
+                    'session' => $session
 
-            return view('templates/header', $data)
-                . view('pages/profile_card')
-                . view('templates/footer');
+                ];
+
+                return view('templates/header', $data)
+                    . view('templates/navbar')
+                    . view('pages/profile_card')
+                    . view('templates/footer');
+            } else {
+                return view('templates/header')
+                    . view('pages/user_not_found')
+                    . view('templates/footer');
+            }
         } else {
-            return view('templates/header')
-                . view('pages/user_not_found')
-                . view('templates/footer');
+            if ($user) {
+                $data = [
+                    'user' => $userModel->getUser($user['id']),
+                    'socials' => $socialModel->getSocials($user['id']),
+                    'colors' => $colorModel->getColors($user['id']),
+                    'session' => $session
+
+                ];
+
+                return view('templates/header', $data)
+                    . view('pages/profile_card')
+                    . view('templates/footer');
+            } else {
+                return view('templates/header')
+                    . view('pages/user_not_found')
+                    . view('templates/footer');
+            }
         }
+
+
 
 
     }
@@ -52,9 +78,11 @@ class Profile extends BaseController
                 $data = [
                     'user' => $userModel->getUser($session->get('id')),
                     'colors' => $colorModel->getColors($session->get('id')),
-                    'socials' => $socialModel->getSocials($session->get('id'))
+                    'socials' => $socialModel->getSocials($session->get('id')),
+                    'session' => $session
                 ];
                 return view('templates/header', $data)
+                    . view('templates/navbar')
                     . view('pages/profile_edit')
                     . view('templates/footer');
             } else {

@@ -9,4 +9,4 @@
     <title>Social Media Aggregator</title>
 </head>
 
-<body class="w-screen h-screen">
+<body <?php if (session()->get('isLoggedIn')): ?>class="w-screen h-[95vh]" <?php else: ?>class="w-screen h-screen" <?php endif; ?>>

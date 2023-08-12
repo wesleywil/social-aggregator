@@ -25,6 +25,7 @@ class Dashboard extends BaseController
         ];
 
         return view('templates/header', $data)
+            . view('templates/navbar')
             . view('pages/dashboard')
             . view('templates/footer');
     }

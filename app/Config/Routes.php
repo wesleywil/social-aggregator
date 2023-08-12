@@ -37,11 +37,10 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->match(['get', 'post'], 'user/create', [User::class, 'create']);
 $routes->match(['get', 'post'], 'profile_edit', [Profile::class, 'update'], ['filter' => 'authGuard']);
 $routes->get('login', [SignIn::class, 'index']);
+$routes->get('logout', [SignIn::class, 'signOut']);
 $routes->get('register', [SignUp::class, 'index']);
-$routes->get('user', [User::class, 'index']);
 $routes->get('profile_card/(:segment)', [Profile::class, 'index']);
 $routes->get('dashboard', [Dashboard::class, 'index'], ['filter' => 'authGuard']);
 $routes->post('login', [SignIn::class, 'auth']);
