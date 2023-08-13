@@ -1,62 +1,95 @@
-# CodeIgniter 4 Application Starter
+# Social Media Aggregator
 
-## What is CodeIgniter?
+Social Media Aggregator: One Link, Infinite Connections - Share all your social media profiles in a single click!
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Tech Stack
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+**Backend:** PHP(CodeIgniter), MySQL, Javascript
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+**FrontEnd:** HTML, CSS(Tailwindcss)
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+## Run Locally
 
-## Installation & updates
+Clone the project
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+```bash
+  git clone https://github.com/wesleywil/social-aggregator
+```
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+### Requirements
 
-## Setup
+- PHP 7 or Higher
+- Composer
+- MySQL
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+### Create tables
 
-## Important Change with index.php
+#### user
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+```bash
+   CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(155) DEFAULT NULL,
+  `username` varchar(45) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `user_img` varchar(255) DEFAULT 'https://dummyimage.com/150x150',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
+)
+```
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+#### socials
 
-**Please** read the user guide for a better explanation of how CI4 works!
+```bash
+  CREATE TABLE `socials` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `twitter` varchar(100) DEFAULT NULL,
+  `facebook` varchar(100) DEFAULT NULL,
+  `instagram` varchar(100) DEFAULT NULL,
+  `linkedin` varchar(100) DEFAULT NULL,
+  `youtube` varchar(100) DEFAULT NULL,
+  `tiktok` varchar(100) DEFAULT NULL,
+  `userId` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `userId_UNIQUE` (`userId`),
+  CONSTRAINT `socials_user` FOREIGN KEY (`userId`) REFERENCES `user` (`id`) ON DELETE CASCADE
+)
+```
 
-## Repository Management
+#### colors
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+```bash
+   CREATE TABLE `colors` (
+  `id` int NOT NULL,
+  `bg_color` varchar(45) DEFAULT 'white',
+  `txt_color` varchar(45) DEFAULT 'black',
+  `acc_color` varchar(45) DEFAULT 'purple',
+  `userId` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `userId_UNIQUE` (`userId`),
+  CONSTRAINT `colors_user` FOREIGN KEY (`userId`) REFERENCES `user` (`id`) ON DELETE CASCADE
+)
+```
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+### Setup .env
 
-## Server Requirements
+```
+database.default.hostname = localhost
+database.default.database = General
+database.default.username = <your_mysql_username>
+database.default.password = <your_mysql_password>
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
+database.default.port = <your_mysql_port>
+```
 
-PHP version 7.4 or higher is required, with the following extensions installed:
+### Start the server
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+```bash
+  php spark serve
+```
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## Authors
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+- [Wesley Wilson](https://github.com/wesleywil)
