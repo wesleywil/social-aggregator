@@ -8,6 +8,32 @@ Social Media Aggregator: One Link, Infinite Connections - Share all your social 
 
 **FrontEnd:** HTML, CSS(Tailwindcss)
 
+## Screenshots
+
+### Demo
+
+![DEMO](https://i.imgur.com/pkxdSKc.gif)
+
+### Login
+
+![Login](https://i.imgur.com/hTTeSfH.png)
+
+### SignUp
+
+![SignUp](https://i.imgur.com/rrKIPq7.png)
+
+### Profile Card
+
+![Profile Card](https://i.imgur.com/RNxQdE3.png)
+
+### Dashboard
+
+![Dashboard](https://i.imgur.com/83OqGGB.png)
+
+### Profile Edit
+
+![Profile Edit](https://i.imgur.com/empF8Gv.png)
+
 ## Run Locally
 
 Clone the project
